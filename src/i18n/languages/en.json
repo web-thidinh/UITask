@@ -1,0 +1,36 @@
+{
+  "global": {
+    "search": "Search",
+    "continue": "Continue",
+    "done": "Done",
+    "remove": "Remove",
+    "cancel": "Cancel",
+    "about": "About",
+    "help": "Help",
+    "edit": "Edit",
+    "add": "Add",
+    "open": "Open",
+    "closed": "Closed",
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    },
+    "xMinutes": "{{minutes}} minutes"
+  },
+  "navigation": {
+    "home": "Home",
+    "login": "Login",
+    "rankings": "Rankings"
+  },
+  "login": {
+    "signInAnon": "Sign in anonymously"
+  },
+  "profile": {
+    "signOut": "Sign out"
+  }
+}
