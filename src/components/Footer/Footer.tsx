@@ -1,21 +1,22 @@
 import React from 'react'
 import * as S from './styled'
 import {Text} from 'react-native'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 const Footer = ()=>{
     return(
         <S.Footer>
             <S.FooterItem>
-                <Text>Footer</Text>
+                <Icon name='home' size={30}/>
             </S.FooterItem>
             <S.FooterItem>
-                <Text>Footer</Text>
+                <Icon name='search' size={30}/>
             </S.FooterItem>
             <S.FooterItem>
-                <Text>Footer</Text>
+                <Icon name='home' size={30}/>
             </S.FooterItem>
             <S.FooterItem>
-                <Text>Footer</Text>
+                <Icon name='user' size={30}/>
             </S.FooterItem>
         </S.Footer>
     )

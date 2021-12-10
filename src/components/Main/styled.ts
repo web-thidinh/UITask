@@ -2,11 +2,13 @@ import styled from 'styled-components'
 
 export const Main = styled.View`
     height:80%;
-    border:1px solid black;
     background-color:white;
 `
 export const MainCategories = styled.View`
-    border:1px solid black;
+    border-style: solid;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    margin-bottom:10px
 `
 export const WrapCategory = styled.ScrollView`
     

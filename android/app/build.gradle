@@ -12,7 +12,7 @@ project.ext.envConfigFiles = [
   productiondebug: ".env.production",
   productionrelease: ".env.production"
 ]
-
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
 /**
@@ -222,7 +222,7 @@ dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation "androidx.core:core-splashscreen:1.0.0-alpha02" 
-
+    compile project(':react-native-vector-icons')
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {

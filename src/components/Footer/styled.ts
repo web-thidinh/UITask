@@ -7,5 +7,6 @@ export const Footer = styled.View`
 export const FooterItem = styled.View`
     width:25%;
     height:100%;
-    border:1px solid black;
+    justify-content:center;
+    align-items:center;
 `

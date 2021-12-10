@@ -13,8 +13,7 @@ import * as S from './styled'
 type Props = {}
 
 const ProductsScreen: FunctionComponent<Props> = () => {
-  const { t } = useTranslation()
-
+  
   return(
       <S.Container>
           <Header/>
