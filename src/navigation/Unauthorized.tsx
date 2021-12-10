@@ -13,7 +13,7 @@ export const Unauthorized: FunctionComponent<Props> = () => {
   const { t } = useTranslation()
 
   return (
-    <Stack.Navigator screenOptions={{ headerBackTitleVisible: false, headerShown: true, }} initialRouteName={ScreenRoute.LOGIN} >
+    <Stack.Navigator screenOptions={{ headerBackTitleVisible: false, headerShown: false, }} initialRouteName={ScreenRoute.LOGIN} >
       <Stack.Screen name='Products' component={ProductsScreen} />
       {/* <Stack.Screen name={ScreenRoute.LOGIN} options={{ title: t('navigation.login'), }} component={LoginScreen} /> */}
     </Stack.Navigator>

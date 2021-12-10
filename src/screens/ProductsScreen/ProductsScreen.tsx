@@ -1,54 +1,27 @@
 import auth from '@react-native-firebase/auth'
 import React, { FunctionComponent } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Button ,View,Text,StyleSheet} from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
+import { Button ,View,Text,StyleSheet,Image} from 'react-native'
+import Icon from 'react-native-vector-icons/FontAwesome'
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
+import { SafeAreaView } from 'react-native-safe-area-context';
+import Header from '../../components/Header'
+import Main from '../../components/Main'
+import Footer from '../../components/Footer'
+import * as S from './styled'
 
 type Props = {}
 
-const LoginScreen: FunctionComponent<Props> = () => {
+const ProductsScreen: FunctionComponent<Props> = () => {
   const { t } = useTranslation()
 
-  const onPressSignInAnon = () => {
-    auth().signInAnonymously()
-  }
-
-  return (
-      <ScrollView>
-        <View style={styles.header}> 
-            <View>
-                <Text style={styles.text}>Valore</Text>
-            </View>
-            <View>
-                <Text style={styles.text}>Filtra</Text>
-            </View>
-        </View>
-        <View style={styles.categories}>
-            <Button title='ALL'/>
-            <Button title='ALL'/>
-            <Button title='ALL'/>
-            <Button title='ALL'/>
-            <Button title='ALL'/>
-            <Button title='ALL'/>
-        </View>
-      </ScrollView>
-    
+  return(
+      <S.Container>
+          <Header/>
+          <Main/>
+          <Footer/>
+      </S.Container>
   )
 }
-const styles = StyleSheet.create({
-    header:{
-        height:100,
-        flexDirection:'row',
-        justifyContent:'space-between'
-    },
-    categories:{
-        borderBottomWidth:1,
-        borderTopWidth:1,
-        flexDirection:'row'
-    }
-    ,
-    text:{
-        fontSize:20
-    }
-})
-export default LoginScreen
+
+export default ProductsScreen
