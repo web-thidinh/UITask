@@ -6,6 +6,7 @@ export const Header = styled.View`
     justify-content:space-between;
     align-items:flex-end;
     padding:15px;
+    background-color:white;
 `
 export const HeaderLeft = styled.View`
     align-items:center;

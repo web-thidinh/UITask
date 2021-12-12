@@ -5,6 +5,7 @@ import dimensions from '../../theme/dimensions'
 export const Container = styled.View`
   background-color: ${colors.WHITE_SMOKE};
   width: ${dimensions.SCREEN_WIDTH / 2}px;
+  border-top:1px solid black;
 `
 
 export const ImageWrapper = styled.View`
@@ -13,16 +14,16 @@ export const ImageWrapper = styled.View`
 
 export const Image = styled.Image`
   width: ${dimensions.SCREEN_WIDTH / 2}px;
-  height: ${dimensions.SCREEN_WIDTH / 2}px;
+  height:250px;
   background-color: ${colors.CHINESE_WHITE};
 `
 
 export const BookmarkImage = styled.Image`
   width: 20px;
-  height: 17.5px;
+  height: 20px;
   position: absolute;
-  bottom: 9.25px;
-  right: 12px;
+  top: 10px;
+  right: 10px;
 `
 
 export const Content = styled.View`

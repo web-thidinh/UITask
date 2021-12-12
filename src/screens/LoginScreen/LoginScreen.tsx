@@ -16,7 +16,7 @@ const LoginScreen: FunctionComponent<Props> = () => {
   return (
     <S.Container>
       <Button title={t('login.signInAnon')} onPress={onPressSignInAnon} />
-      <Button title='See my App' onPress={onPressSignInAnon} />
+      {/* <Button title='See my App' onPress={onPressSignInAnon} /> */}
     </S.Container>
   )
 }

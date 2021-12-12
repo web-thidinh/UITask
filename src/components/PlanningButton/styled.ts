@@ -6,14 +6,14 @@ export const Button1 = styled.TouchableOpacity`
   align-self: flex-start;
   height: 24px;
   border-radius: 8px;
-  padding: 0px 8px 0px 6px;
+  padding: 0px 8px 0px 0px;
 `
 
 export const Button = styled(Button1)`
   flex-direction: row;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
-  background-color: ${props => (props.disabled ? colors.DISABLED : colors.PRIMARY_BLACK)};
+  // background-color: ${props => (props.disabled ? colors.DISABLED : colors.PRIMARY_BLACK)};
 `
 
 export const Icon = styled.Image`

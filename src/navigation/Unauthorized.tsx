@@ -1,6 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack'
 import React, { FunctionComponent } from 'react'
 import { useTranslation } from 'react-i18next'
+import HomeScreen from '../screens/HomeScreen'
 import LoginScreen from '../screens/LoginScreen'
 import ProductsScreen from '../screens/ProductsScreen'
 import { ScreenRoute } from './routes'
@@ -15,6 +16,7 @@ export const Unauthorized: FunctionComponent<Props> = () => {
   return (
     <Stack.Navigator screenOptions={{ headerBackTitleVisible: false, headerShown: false, }} initialRouteName={ScreenRoute.LOGIN} >
       <Stack.Screen name='Products' component={ProductsScreen} />
+      {/* <Stack.Screen name='Home' component={HomeScreen} /> */}
       {/* <Stack.Screen name={ScreenRoute.LOGIN} options={{ title: t('navigation.login'), }} component={LoginScreen} /> */}
     </Stack.Navigator>
   )

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 export const Footer = styled.View`
     height:10%;
-    background-color:grey;
+    background-color:black;
     flex-direction:row;
 `
 export const FooterItem = styled.View`

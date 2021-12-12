@@ -21,6 +21,7 @@ export type TypographyProps = {
   color?: string
   fontSize?: number
   white?: boolean
+  black?:boolean
   as?: any
 } & ThemeColorProps
 
@@ -35,6 +36,7 @@ export const textBase = css``
 export const textProps = css<TypographyProps>`
   ${({ light, theme }) => light && `color: ${theme.colors.text_light}`}
   ${({ white, theme }) => white && `color: ${theme.colors.white}`}
+  ${({ black, theme }) => black && `color: ${theme.colors.black}`}
   ${({ accent, theme }) => accent && `color: ${theme.colors.accent}`}
   ${({ color }) => color && `color: ${color}`}
   ${({ fontSize }) => fontSize && `fontSize: ${fontSize}px`}
@@ -89,6 +91,20 @@ export const ButtonText2: TypographyComponent = styled(CustomText)`
   font-family: ${Fonts.HELVETICA_NEUE_NORMAL};
   ${textProps}
 `
+export const ButtonText3: TypographyComponent = styled(CustomText)`
+  font-size: 16px;
+  line-height: 27px;
+  font-family: ${Fonts.HELVETICA_NEUE_NORMAL};
+  ${textProps}
+`
+export const SelectButton: TypographyComponent = styled(CustomText)`
+  font-size: 20px;
+  font-weight:bold;
+  line-height: 27px;
+  font-family: ${Fonts.HELVETICA_NEUE_NORMAL};
+  ${textProps}
+`
+
 export const Text1Bold: TypographyComponent = styled(CustomText)`
   font-size: 16px;
   line-height: 18px;

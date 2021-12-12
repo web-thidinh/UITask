@@ -109,7 +109,7 @@ const HomeScreen: FunctionComponent<Props> = () => {
 
       <Card
         brand="ZARA"
-        product="Marvel Hoodie"
+        // product="Marvel Hoodie"
         outs={['S', 'M']}
         type="essential"
         price="35€/mo"

@@ -6,7 +6,7 @@ import * as S from './styled'
 type Props = {
   onPress?: Function
   disabled?: boolean
-  type: 'essential' | 'premium' | 'luxury'
+  type: 'essential' | 'premium' | 'luxury' | 'Valore'
 }
 const PlanningButton: FunctionComponent<Props> = ({
   disabled = false,
@@ -28,11 +28,11 @@ const PlanningButton: FunctionComponent<Props> = ({
   const icon = iconByType()
   return (
     <S.Button disabled={disabled} onPress={onPress} activeOpacity={0.8}>
-      <S.Icon source={icon} resizeMode="contain" />
-      <Spacer w={2} />
-      <T.Text4 white bold>
-        {type.toUpperCase()}
-      </T.Text4>
+      {/* <S.Icon source={icon} resizeMode="contain" /> */}
+      {/* <Spacer w={2} /> */}
+      <T.Text2 black>
+        {type}
+      </T.Text2>
     </S.Button>
   )
 }

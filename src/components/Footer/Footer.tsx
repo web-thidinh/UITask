@@ -7,16 +7,16 @@ const Footer = ()=>{
     return(
         <S.Footer>
             <S.FooterItem>
-                <Icon name='home' size={30}/>
+                <Icon name='home' color='grey' size={30}/>
             </S.FooterItem>
             <S.FooterItem>
-                <Icon name='search' size={30}/>
+                <Icon name='search' color='white' size={30}/>
             </S.FooterItem>
             <S.FooterItem>
-                <Icon name='home' size={30}/>
+                <Icon name='home' color='grey' size={30}/>
             </S.FooterItem>
             <S.FooterItem>
-                <Icon name='user' size={30}/>
+                <Icon name='user' color='grey' size={30}/>
             </S.FooterItem>
         </S.Footer>
     )

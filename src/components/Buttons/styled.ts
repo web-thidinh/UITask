@@ -9,6 +9,16 @@ export const Button1 = styled.TouchableOpacity`
   align-items: center;
   align-self: flex-start;
 `
+export const ButtonT = styled.TouchableOpacity`
+  // width: 126px;
+  padding: 0 20px;
+  height: 35px;
+  margin-right:15px;
+  border-radius: 17px;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+`
 
 export const Button2 = styled.TouchableOpacity`
   border-radius: 4px;
@@ -19,6 +29,11 @@ export const Button2 = styled.TouchableOpacity`
 export const Primary = styled(Button1)`
   background-color: ${props => (props.disabled ? colors.DISABLED : colors.PRIMARY_BLACK)};
 `
+export const BasicButton = styled(ButtonT)`
+  border-width:1px;
+  border-color: ${props => (props.disabled ? colors.SECONDARY_DISABLED : colors.PRIMARY_BLACK)};
+`
+
 export const Secondary = styled(Button1)`
   border-width: 2px;
   border-color: ${props => (props.disabled ? colors.SECONDARY_DISABLED : colors.PRIMARY_BLACK)};

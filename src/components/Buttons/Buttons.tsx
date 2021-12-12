@@ -8,7 +8,7 @@ type Props = {
   disabled?: boolean
   onPress: Function
   activated?: boolean
-  type: 'primary' | 'secondary' | 'cancel' | 'third' | 'select' | 'google' | 'facebook' | 'block'
+  type: 'primary' | 'secondary' | 'cancel' | 'third' | 'select' | 'google' | 'facebook' | 'block' | 'basic'
 }
 
 const getButtonComponent = (props: Props): ReactElement => {
@@ -19,6 +19,11 @@ const getButtonComponent = (props: Props): ReactElement => {
       <S.Primary disabled={disabled} onPress={onPress}>
         <T.ButtonText2 color={colors.WHITE}>{text}</T.ButtonText2>
       </S.Primary>
+    ),
+    basic:(
+      <S.BasicButton disabled={disabled} onPress={onPress}>
+        <T.ButtonText3 color={disabled && colors.SECONDARY_DISABLED}>{text}</T.ButtonText3>
+      </S.BasicButton>
     ),
     secondary: (
       <S.Secondary disabled={disabled} onPress={onPress}>
@@ -32,7 +37,7 @@ const getButtonComponent = (props: Props): ReactElement => {
     ),
     select: (
       <S.Select disabled={disabled} onPress={() => onPress()}>
-        <T.ButtonText2 color={disabled && colors.SECONDARY_DISABLED}>{text}</T.ButtonText2>
+        <T.SelectButton color={disabled && colors.SECONDARY_DISABLED}>{text}</T.SelectButton>
         <S.ArrowImage source={require('../../assets/images/arrow-down.png')} resizeMode="contain" />
       </S.Select>
     ),
