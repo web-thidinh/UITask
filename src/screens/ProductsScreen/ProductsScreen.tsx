@@ -6,8 +6,11 @@ import Button from '../../components/Buttons'
 import Card from '../../components/Card'
 import Modal from "react-native-modal";
 import HomeScreen from '../HomeScreen'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 const Tab = createBottomTabNavigator()
+import ExtraDimensions  from 'react-native-extra-dimensions-android'
+const deviceWidth = ExtraDimensions.get("REAL_WINDOW_HEIGHT")
+
 type Props = {}
 const Options = ()=>{
     return(
@@ -63,23 +66,8 @@ const ProductsScreen: FunctionComponent<Props> = () => {
                     )}
                 />
             </S.Main>
-            
-            {/* <S.MainTab>
-                <S.MainTabItem onPress={()=>Alert.alert('Clicked')}>
-                    <Image source={require('../../assets/images/home.png')}/>
-                </S.MainTabItem>
-                <S.MainTabItem onPress={()=>Alert.alert('Clicked')}>
-                    <Image source={require('../../assets/images/search.png')}/>
-                </S.MainTabItem>
-                <S.MainTabItem onPress={()=>Alert.alert('Clicked')}>
-                    <Image source={require('../../assets/images/icon3.png')}/>
-                </S.MainTabItem>
-                <S.MainTabItem onPress={()=>Alert.alert('Clicked')}>
-                    <Icon name='user' color='grey' size={30}/>
-                </S.MainTabItem>
-            </S.MainTab> */}
 
-            <Modal isVisible={isModalVisible} coverScreen={true}>
+            <Modal isVisible={isModalVisible} deviceWidth={deviceWidth} style={{ margin: 0}}>
                 <S.ContentModal>
                     <S.ColBetween>
                         <Text style={{fontSize:27,fontWeight:'bold',color:'black'}}>Filtra per viore di abbonamento</Text>

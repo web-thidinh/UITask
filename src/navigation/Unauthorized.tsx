@@ -29,18 +29,22 @@ export const Unauthorized: FunctionComponent<Props> = () => {
         tabBarInactiveTintColor: 'gray',
         tabBarActiveTintColor: '#fff',
         tabBarStyle: {
-          height:'13%',
-          paddingTop: 0,
+          height:'10%',
           backgroundColor: '#000',
-          position: 'absolute',
           borderTopWidth: 0,
     }}}>
       <Tab.Screen name='Home' component={HomeScreen} options={{
         tabBarIcon:({focused})=>(<View><Image source={require('../assets/images/home.png')}/></View>)
       }}/>
-      <Tab.Screen name='Products' component={ProductsScreen}/>
-      <Tab.Screen name='Others' component={OtherScreen}/>
-      <Tab.Screen name='Profile' component={ProfileScreen}/>
+      <Tab.Screen name='Products' component={ProductsScreen} options={{
+        tabBarIcon:({focused})=>(<View><Image source={require('../assets/images/search.png')}/></View>)
+      }}/>
+      <Tab.Screen name='Others' component={OtherScreen} options={{
+        tabBarIcon:({focused})=>(<View><Image source={require('../assets/images/icon3.png')}/></View>)
+      }}/>
+      <Tab.Screen name='Profile' component={ProfileScreen} options={{
+        tabBarIcon:({focused})=>(<View><Image source={require('../assets/images/home.png')}/></View>)
+      }}/>
     </Tab.Navigator>
   )
 }

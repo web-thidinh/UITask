@@ -43,6 +43,7 @@
     "react-native": "0.66.3",
     "react-native-bootsplash": "^4.0.0-beta.3",
     "react-native-config": "^1.4.5",
+    "react-native-extra-dimensions-android": "^1.2.5",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-localize": "^2.1.5",
     "react-native-modal": "^13.0.0",
