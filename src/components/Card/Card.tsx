@@ -12,11 +12,12 @@ type Props = {
   brand: string
   // product: string
   price: string
+  onPress:Function
 }
 
 const sizeList = ['S', 'M', 'L', 'XL', 'XXL']
 
-const Card: FunctionComponent<Props> = ({ type = 'Valore', outs = [], image, brand, price, }) => {
+const Card: FunctionComponent<Props> = ({ type = 'Valore', outs = [], image, brand, price, onPress }) => {
 
   const sizes = useCallback(() => {
     return sizeList.map((size, index) => {
@@ -30,7 +31,7 @@ const Card: FunctionComponent<Props> = ({ type = 'Valore', outs = [], image, bra
   }, [outs])
 
   return (
-    <S.Container>
+    <S.Container onPress={onPress}>
       <S.ImageWrapper>
         <S.Image source={image} resizeMode="cover" />
 

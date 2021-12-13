@@ -1,11 +1,13 @@
-import styled from 'styled-components'
+import styled ,{ keyframes }from 'styled-components'
+import {Animated} from 'react-native'
+
 
 export const Container = styled.SafeAreaView`
-    width:100%;
-    height:100%;
+    flex: 1;
+`
+export const ScrollContainer = styled.ScrollView`
     background-color:black;
 `
-
 //Header
 export const Header = styled.View`
     height:10%;
@@ -72,12 +74,12 @@ export const ProductName = styled.Text`
     font-weight:bold;
 `
 //Footer
-export const Footer = styled.View`
+export const MainTab = styled.View`
     height:10%;
     background-color:black;
     flex-direction:row;
 `
-export const FooterItem = styled.View`
+export const MainTabItem = styled.TouchableOpacity`
     width:25%;
     height:100%;
     justify-content:center;
@@ -96,9 +98,9 @@ export const RowBetween = styled.View`
 
 //Overlay
 
-export const OverlayModel = styled.View`
+export const OverlayModel = styled.TouchableOpacity`
     width:100%;
-    height:100%;
+    height:106%;
     position:absolute;
     background-color:rgba(0,0,0,0.3);
     justify-content:flex-end;
@@ -106,6 +108,7 @@ export const OverlayModel = styled.View`
 
 export const ContentModal = styled.View`
     background-color:#fff;
+    width:100%;
     height:65%;
     padding:50px 35px;
     border-top-left-radius:25px;

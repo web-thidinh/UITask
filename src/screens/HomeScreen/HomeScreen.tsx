@@ -18,6 +18,7 @@ const HomeScreen: FunctionComponent<Props> = () => {
 
   return (
     <S.Container>
+      <S.ScrollContainer>
       <T.Title>Title</T.Title>
       <T.Header1>Header 1</T.Header1>
       <T.Header2>Header 2</T.Header2>
@@ -121,6 +122,7 @@ const HomeScreen: FunctionComponent<Props> = () => {
         description="Two words about this plan, lorem ipsum dolor sit amet lorem ipsum"
       />
       <Spacer h={200} />
+      </S.ScrollContainer>
     </S.Container>
   )
 }

@@ -2,7 +2,7 @@ import styled from 'styled-components/native'
 import colors from '../../theme/colors'
 import dimensions from '../../theme/dimensions'
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity`
   background-color: ${colors.WHITE_SMOKE};
   width: ${dimensions.SCREEN_WIDTH / 2}px;
   border-top:1px solid black;

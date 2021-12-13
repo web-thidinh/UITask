@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native'
 import React, { FC, useEffect } from 'react'
-import { ActivityIndicator } from 'react-native'
+import { ActivityIndicator,SafeAreaView } from 'react-native'
 import RNBootSplash from 'react-native-bootsplash'
 import { CenteredFillView } from 'styled-native-kit'
 import useAuthListener from '../hooks/useAuthListener'

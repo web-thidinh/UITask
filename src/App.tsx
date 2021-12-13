@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { LogBox, StatusBar, useColorScheme } from 'react-native'
+import { LogBox, StatusBar, useColorScheme,SafeAreaView} from 'react-native'
 import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'

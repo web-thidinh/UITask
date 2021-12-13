@@ -10,14 +10,12 @@ export const Button1 = styled.TouchableOpacity`
   align-self: flex-start;
 `
 export const ButtonT = styled.TouchableOpacity`
-  // width: 126px;
   padding: 0 20px;
   height: 35px;
   margin-right:15px;
   border-radius: 17px;
   justify-content: center;
   align-items: center;
-  align-self: flex-start;
 `
 
 export const Button2 = styled.TouchableOpacity`
