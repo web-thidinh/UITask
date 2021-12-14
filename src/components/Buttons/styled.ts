@@ -42,8 +42,8 @@ export const ColorButton = styled(BaseButton)`
   height:44px;
   border-width:1px;
   margin-bottom:15px;
+  background-color:${(props)=>(props.bgcolor ? props.bgcolor : colors.DISABLED)};
 `
-
 export const Primary = styled(Button1)`
   background-color: ${props => (props.disabled ? colors.DISABLED : colors.PRIMARY_BLACK)};
 `

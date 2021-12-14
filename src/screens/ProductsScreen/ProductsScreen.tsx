@@ -1,5 +1,5 @@
 import React, { FunctionComponent ,useState} from 'react'
-import {View,Text,Image,FlatList,Alert,Switch} from 'react-native'
+import {Text,Image,FlatList,Alert,Switch} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import * as S from './styled'
 import * as T from '../../theme/typography'
@@ -16,6 +16,8 @@ import colors from '../../theme/colors'
 type Props = {}
 const ProductsScreen: FunctionComponent<Props> = () => {
 
+  const colorValue = Object.values(colors)
+  const sizeList = ['Talia unica','XS','S', 'M', 'L', 'XL', 'XXL']
   const [products,setProducts] = useState([
       {id:'1',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
       {id:'2',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
@@ -26,24 +28,25 @@ const ProductsScreen: FunctionComponent<Props> = () => {
   ])
   const [isModalVisible1, setModalVisible1] = useState(false)
   const [isModalVisible, setModalVisible] = useState(false)
+  const [color,setColor] = useState(false)
+  const [brand,setBrand] = useState(false)
+  const [taglia,setTaglia] = useState(false)
+  const [isEnabled, setIsEnabled] = useState(false)
+
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   }
+
   const showFiltra = ()=>{
       setModalVisible1(!isModalVisible1)
   }
-  const [isEnabled, setIsEnabled] = useState(false)
+
   const toggleSwitch = () => setIsEnabled(previousState => !previousState)
 
   const [radio,setRadio] = useState(0)
   var radio_props = [
     { label: '',value: 1 }
   ];
-
-  const [color,setColor] = useState(false)
-  const [brand,setBrand] = useState(false)
-  const [taglia,setTaglia] = useState(false)
-  
 
   return(
       <S.Container>
@@ -81,7 +84,7 @@ const ProductsScreen: FunctionComponent<Props> = () => {
                 <S.ContentModal>
                     <S.ColBetween>
                         <Text style={{fontSize:27,fontWeight:'bold',color:'black'}}>Filtra per viore di abbonamento</Text>
-
+                    
                         <S.RowAround>
                             <S.FlexCol>
                                 <T.Header1>39€</T.Header1>
@@ -94,13 +97,7 @@ const ProductsScreen: FunctionComponent<Props> = () => {
                             </S.FlexCol>
 
                             <S.FlexCol>
-                                {/* <RadioForm
-                                    radio_props={radio_props}
-                                    initial={1}
-                                    buttonColor={'#000'}
-                                    labelColor={'#000'}
-                                    onPress={(value)=>setRadio(value)}
-                                /> */}
+                                <Image source={require('../../assets/images/radio.png')}/>
                             </S.FlexCol>
                         </S.RowAround>
 
@@ -116,13 +113,7 @@ const ProductsScreen: FunctionComponent<Props> = () => {
                             </S.FlexCol>
 
                             <S.FlexCol>
-                                {/* <RadioForm
-                                    radio_props={radio_props}
-                                    initial={1}
-                                    buttonColor={'#000'}
-                                    labelColor={'#000'}
-                                    onPress={(value)=>setRadio(value)}
-                                /> */}
+                                <Image source={require('../../assets/images/radio-checked.png')}/>
                             </S.FlexCol>
                         </S.RowAround>
 
@@ -138,13 +129,7 @@ const ProductsScreen: FunctionComponent<Props> = () => {
                             </S.FlexCol>
 
                             <S.FlexCol>
-                                {/* <RadioForm
-                                    radio_props={radio_props}
-                                    initial={1}
-                                    buttonColor={'#000'}
-                                    labelColor={'#000'}
-                                    onPress={(value)=>setRadio(value)}
-                                /> */}
+                                <Image source={require('../../assets/images/radio.png')}/>
                             </S.FlexCol>
                         </S.RowAround>
 
@@ -209,12 +194,11 @@ const ProductsScreen: FunctionComponent<Props> = () => {
                                 </S.RowBetween>
                                 {taglia?
                                 (<S.Row>
-                                    <Button text="Talia unica" onPress={toggleModal} type="square" />
-                                    <Button text="XS" onPress={toggleModal} type="square" />
-                                    <Button text="S" onPress={toggleModal} type="square" />
-                                    <Button text="M" onPress={toggleModal} type="square" />
-                                    <Button text="L" onPress={toggleModal} type="square" />
-                                    <Button text="XL" onPress={toggleModal} type="square" />
+                                    {
+                                        sizeList? sizeList.map((item,index)=>
+                                        (<Button key={index} text={item} onPress={toggleModal} type="square" />)
+                                        ):null
+                                    }
                                 </S.Row>):null}
                             </S.ColAround>
                             <S.ColAround style={{borderBottomWidth:1,paddingRight:20}}>
@@ -227,7 +211,9 @@ const ProductsScreen: FunctionComponent<Props> = () => {
                                 </S.RowBetween>
                                 {color?
                                 (<S.Row>
-                                    <Button text="" onPress={toggleModal} type="square" />
+                                    {colorValue.map((item,index)=>
+                                        (<Button key={index} bgcolor={item} text="" onPress={toggleModal} type="color" />)
+                                    )}
                                 </S.Row>):null}
                             </S.ColAround>
                         </S.ScrollContent>

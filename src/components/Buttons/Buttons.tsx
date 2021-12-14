@@ -5,6 +5,7 @@ import * as S from './styled'
 
 type Props = {
   text: string
+  bgcolor?:string
   disabled?: boolean
   onPress: Function
   activated?: boolean
@@ -12,7 +13,7 @@ type Props = {
 }
 
 const getButtonComponent = (props: Props): ReactElement => {
-  const { text, disabled = false, onPress, type = 'primary', activated = false } = props
+  const { text, disabled = false, onPress, type = 'primary',bgcolor='', activated = false } = props
 
   const buttons: Record<string, ReactElement> = {
     primary: (
@@ -36,7 +37,7 @@ const getButtonComponent = (props: Props): ReactElement => {
       </S.Square>
     ),
     color:(
-      <S.ColorButton disabled={disabled} onPress={onPress}>
+      <S.ColorButton bgcolor={bgcolor} disabled={disabled} onPress={onPress}>
         <T.ButtonText2 color={disabled && colors.SECONDARY_DISABLED}>{text}</T.ButtonText2>
       </S.ColorButton>
     ),

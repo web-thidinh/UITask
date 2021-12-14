@@ -21,19 +21,19 @@ const PlanningRadio: FunctionComponent<Props> = ({
 }) => {
   return (
     <S.Container disabled={disabled} onPress={onPress} activeOpacity={0.8}>
-      <S.RadioWrapper>
-        <S.RadioImage source={require('../../assets/images/radio-checked.png')} />
-      </S.RadioWrapper>
       <S.ContentWrapper>
         <S.CenteredGrid>
-          <PlanningButton type={type} />
+          {/* <PlanningButton type={type} /> */}
           <T.CardTitle2 color={colors.DARK_LIVER} bold>
             {price}
           </T.CardTitle2>
+          <T.Text2 color={colors.DARK_LIVER}>{description}</T.Text2>
         </S.CenteredGrid>
         <Spacer h={8} />
-        <T.Text2 color={colors.DARK_LIVER}>{description}</T.Text2>
       </S.ContentWrapper>
+      <S.RadioWrapper>
+        <S.RadioImage source={require('../../assets/images/radio-checked.png')} />
+      </S.RadioWrapper>
     </S.Container>
   )
 }
