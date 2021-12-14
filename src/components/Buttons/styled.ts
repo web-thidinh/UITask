@@ -17,11 +17,31 @@ export const ButtonT = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
 `
-
+export const BaseButton = styled.TouchableOpacity`
+  padding: 0 20px;
+  border-color:black;
+  margin-right:15px;
+  border-radius:7px;
+  justify-content: center;
+  align-items: center;
+`
+export const BaseButton1 = styled.TouchableOpacity`
+  border-color:black;
+  margin-right:10px;
+  border-radius:7px;
+  justify-content: center;
+  align-items: center;
+`
 export const Button2 = styled.TouchableOpacity`
   border-radius: 4px;
   justify-content: center;
   align-items: center;
+`
+export const ColorButton = styled(BaseButton)`
+  width:44px;
+  height:44px;
+  border-width:1px;
+  margin-bottom:15px;
 `
 
 export const Primary = styled(Button1)`
@@ -36,7 +56,17 @@ export const Secondary = styled(Button1)`
   border-width: 2px;
   border-color: ${props => (props.disabled ? colors.SECONDARY_DISABLED : colors.PRIMARY_BLACK)};
 `
-
+export const Square = styled(BaseButton1)`
+  width:44px;
+  height:44px;
+  border-width:1px;
+  margin-bottom:15px;
+`
+export const Rectangle = styled(BaseButton)`
+  height: 35px;
+  border-width:1px;
+  margin-bottom:15px;
+`
 export const Cancel = styled.TouchableOpacity``
 
 export const Select = styled.TouchableOpacity`

@@ -21,7 +21,7 @@ export const HeaderLeft = styled.View`
     align-items:center;
     flex-direction:row;
 `
-export const HeaderRight = styled.View`
+export const HeaderRight = styled.TouchableOpacity`
     align-items:center;
     flex-direction:row;
 `
@@ -78,18 +78,32 @@ export const ColBetween = styled.View`
     height:100%;
     justify-content:space-between;
 `
-export const RowBetween = styled.View`
+export const Row = styled.View`
+    flex-wrap:wrap;
+    flex-direction:row;
+`
+export const ColAround = styled.View`
+    justify-content:space-around;
+`
+export const FlexCol = styled.View`
+`
+export const RowBetween = styled.TouchableOpacity`
+    align-items:center;
     flex-direction:row;
     justify-content:space-between;
 `
+export const RowAround = styled.View`
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-around;
+`
+export const WrapText = styled.Text`
+    flex-wrap:wrap;
+`
+//Modal
 
-//Overlay
-export const OverlayModel = styled.TouchableOpacity`
-    width:100%;
-    height:106%;
-    position:absolute;
-    background-color:rgba(0,0,0,0.3);
-    justify-content:flex-end;
+export const ScrollContent = styled.ScrollView`
+    
 `
 export const ContentModal = styled.View`
     height:70%;
@@ -97,6 +111,14 @@ export const ContentModal = styled.View`
     background-color:#fff;
     position:absolute;
     bottom:0;
+    padding:50px 35px;
+    border-top-left-radius:25px;
+    border-top-right-radius:25px;
+`
+
+export const ContentModal1 = styled.View`
+    height:90%;
+    background-color:#fff;
     padding:50px 35px;
     border-top-left-radius:25px;
     border-top-right-radius:25px;

@@ -8,7 +8,7 @@ type Props = {
   disabled?: boolean
   onPress: Function
   activated?: boolean
-  type: 'primary' | 'secondary' | 'cancel' | 'third' | 'select' | 'google' | 'facebook' | 'block' | 'basic'
+  type: 'primary' | 'secondary' | 'cancel' | 'third' | 'select' | 'google' | 'facebook' | 'block' | 'basic' | 'square' |'rectangle'| 'color'
 }
 
 const getButtonComponent = (props: Props): ReactElement => {
@@ -29,6 +29,21 @@ const getButtonComponent = (props: Props): ReactElement => {
       <S.Secondary disabled={disabled} onPress={onPress}>
         <T.ButtonText2 color={disabled && colors.SECONDARY_DISABLED}>{text}</T.ButtonText2>
       </S.Secondary>
+    ),
+    square:(
+      <S.Square disabled={disabled} onPress={onPress}>
+        <T.ButtonText2 color={disabled && colors.SECONDARY_DISABLED}>{text}</T.ButtonText2>
+      </S.Square>
+    ),
+    color:(
+      <S.ColorButton disabled={disabled} onPress={onPress}>
+        <T.ButtonText2 color={disabled && colors.SECONDARY_DISABLED}>{text}</T.ButtonText2>
+      </S.ColorButton>
+    ),
+    rectangle:(
+      <S.Rectangle disabled={disabled} onPress={onPress}>
+        <T.ButtonText2 color={disabled && colors.SECONDARY_DISABLED}>{text}</T.ButtonText2>
+      </S.Rectangle>
     ),
     cancel: (
       <S.Cancel disabled={disabled} onPress={onPress}>

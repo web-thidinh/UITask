@@ -87,7 +87,7 @@ export const ButtonText1: TypographyComponent = styled(CustomText)`
 `
 export const ButtonText2: TypographyComponent = styled(CustomText)`
   font-size: 16px;
-  line-height: 27px;
+  line-height: 37px;
   font-family: ${Fonts.HELVETICA_NEUE_NORMAL};
   ${textProps}
 `

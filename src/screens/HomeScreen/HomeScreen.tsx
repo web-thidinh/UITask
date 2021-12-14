@@ -109,6 +109,7 @@ const HomeScreen: FunctionComponent<Props> = () => {
       </S.Grid>
 
       <Card
+        onPress={(): void => {}}
         brand="ZARA"
         // product="Marvel Hoodie"
         outs={['S', 'M']}
