@@ -1,6 +1,7 @@
 /**
  * Options
  */
+ import { fontSize, screenSize, iconSize, borderRadius, spacing, shadow } from './dimensions'
 
 const neutrals = ['#000', '#fff']
 
@@ -45,9 +46,7 @@ export const tokens = {
     // reds,
     // blues,
   },
-  spacers: {
-    horizontalScreenPadding: 16,
-  },
+  
 }
 
 export function getThemeConfig(mode: ThemeConfig) {
@@ -56,5 +55,18 @@ export function getThemeConfig(mode: ThemeConfig) {
       ...tokens.colors,
       ...mode,
     },
+    spacers: {
+      horizontalScreenPadding: 16,
+    },
+    font_size:{
+      ...fontSize,
+    },
+    spacing:{
+      ...spacing,
+    },
+    screenSize:{
+      ...screenSize
+    },
+    
   }
 }

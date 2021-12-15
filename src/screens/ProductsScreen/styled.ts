@@ -105,6 +105,16 @@ export const WrapText = styled.Text`
 export const ScrollContent = styled.ScrollView`
     
 `
+export const CloseIcon = styled.Image`
+    position:absolute;
+    right:0;
+    top:0;
+`
+export const ModalHeader = styled.Text`
+font-size:27px;
+font-weight:bold;
+color:black;
+`
 export const ContentModal = styled.View`
     height:70%;
     width:100%;

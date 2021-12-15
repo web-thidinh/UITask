@@ -1,10 +1,10 @@
 import styled from 'styled-components/native'
 import colors from '../../theme/colors'
-import dimensions from '../../theme/dimensions'
+import {screenSize} from '../../theme/dimensions'
 
 export const Container = styled.TouchableOpacity`
   background-color: ${colors.WHITE_SMOKE};
-  width: ${dimensions.SCREEN_WIDTH / 2}px;
+  width: ${screenSize.width / 2}px;
   border-top:1px solid black;
 `
 
@@ -13,7 +13,7 @@ export const ImageWrapper = styled.View`
 `
 
 export const Image = styled.Image`
-  width: ${dimensions.SCREEN_WIDTH / 2}px;
+  width: ${screenSize.width / 2}px;
   height:250px;
   background-color: ${colors.CHINESE_WHITE};
 `
