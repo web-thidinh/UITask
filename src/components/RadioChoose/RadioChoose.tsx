@@ -23,7 +23,8 @@ const RadioChoose: FunctionComponent<Props> = ({
   description,
   value
 }) => {
-const [isChecked,setIsChecked] = useState(0)
+  const [isChecked,setIsChecked] = useState(0)
+
   return (
     <S.RadioItem>
 

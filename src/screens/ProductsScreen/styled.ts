@@ -1,5 +1,4 @@
 import styled ,{ keyframes }from 'styled-components'
-import {Animated} from 'react-native'
 
 
 export const Container = styled.SafeAreaView`
@@ -29,8 +28,8 @@ export const TextHeader = styled.Text`
     font-size:20px;
     font-weight:bold;
 `
-//Main
-export const Main = styled.View`
+//Content
+export const Content = styled.View`
     height:90%;
     background-color:white;
     border-bottom-left-radius:25px;
@@ -99,37 +98,4 @@ export const RowAround = styled.View`
 `
 export const WrapText = styled.Text`
     flex-wrap:wrap;
-`
-//Modal
-
-export const ScrollContent = styled.ScrollView`
-    
-`
-export const CloseIcon = styled.Image`
-    position:absolute;
-    right:0;
-    top:0;
-`
-export const ModalHeader = styled.Text`
-font-size:27px;
-font-weight:bold;
-color:black;
-`
-export const ContentModal = styled.View`
-    height:70%;
-    width:100%;
-    background-color:#fff;
-    position:absolute;
-    bottom:0;
-    padding:50px 35px;
-    border-top-left-radius:25px;
-    border-top-right-radius:25px;
-`
-
-export const ContentModal1 = styled.View`
-    height:90%;
-    background-color:#fff;
-    padding:50px 35px;
-    border-top-left-radius:25px;
-    border-top-right-radius:25px;
 `

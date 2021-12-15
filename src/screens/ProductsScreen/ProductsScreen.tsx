@@ -1,4 +1,4 @@
-import React, { FunctionComponent ,useState} from 'react'
+import React, { FunctionComponent ,useState,useRef} from 'react'
 import {Text,Image,FlatList,Alert,Switch} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import * as S from './styled'
@@ -49,6 +49,9 @@ const ProductsScreen: FunctionComponent<Props> = () => {
 
   const toggleSwitch = () => setIsEnabled(previousState => !previousState)
 
+  const showHalfModal = useRef()
+  const showFullfModal = useRef()
+
   return(
       <S.Container>
 
@@ -61,7 +64,7 @@ const ProductsScreen: FunctionComponent<Props> = () => {
                 </S.HeaderRight>
             </S.Header>
             
-            <S.Main>
+            <S.Content>
                 <S.MainCategories>
                     <S.WrapCategory horizontal={true}>
                         {
@@ -79,7 +82,7 @@ const ProductsScreen: FunctionComponent<Props> = () => {
                         <Card type='Valore' onPress={toggleModal} brand={item.brand} image = {item.image} price={item.price}/>
                     )}
                 />
-            </S.Main>
+            </S.Content>
 
             <Modal isShow={isModalVisible} isHide={toggleModal} type='half'/>
             <Modal isShow={isModalVisible1} isHide={toggleModal1} type='full'/>

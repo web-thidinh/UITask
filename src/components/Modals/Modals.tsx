@@ -146,7 +146,7 @@ const ModalComponent = ({type,isShow,isHide}): ReactElement => {
 }
 
 const Modals:FunctionComponent<Props> = (props)=>{
-    return <>{ModalComponent(props)}</>
+    return ModalComponent(props)
 }
 
 export default Modals
