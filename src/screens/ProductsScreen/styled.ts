@@ -85,7 +85,7 @@ export const Row = styled.View`
 export const ColAround = styled.View`
     justify-content:space-around;
 `
-export const FlexCol = styled.View`
+export const FlexCol = styled.TouchableOpacity`
 `
 export const RowBetween = styled.TouchableOpacity`
     align-items:center;

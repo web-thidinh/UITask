@@ -20,7 +20,7 @@ export const ButtonT = styled.TouchableOpacity`
 export const BaseButton = styled.TouchableOpacity`
   padding: 0 20px;
   border-color:black;
-  margin-right:15px;
+  margin-right:10px;
   border-radius:7px;
   justify-content: center;
   align-items: center;
@@ -38,10 +38,10 @@ export const Button2 = styled.TouchableOpacity`
   align-items: center;
 `
 export const ColorButton = styled(BaseButton)`
-  width:44px;
-  height:44px;
+  width:40px;
+  height:40px;
   border-width:1px;
-  margin-bottom:15px;
+  margin-bottom:10px;
   background-color:${(props)=>(props.bgcolor ? props.bgcolor : colors.DISABLED)};
 `
 export const Primary = styled(Button1)`

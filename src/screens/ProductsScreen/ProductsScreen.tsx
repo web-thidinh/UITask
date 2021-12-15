@@ -26,12 +26,18 @@ const ProductsScreen: FunctionComponent<Props> = () => {
       {id:'5',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
       {id:'6',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
   ])
+  const [options,setOptions] = useState([
+      {price:'39€',description:'Con questo abbonamento hai accesso a un prodotto al mese con valore retail massimo di 250€',type:'Sliver'},
+      {price:'69€',description:'Con questo abbonamento hai accesso a un prodotto al mese con valore retail massimo di 600€',type:'Gold'},
+      {price:'99€',description:'Con questo abbonamento hai accesso a un prodotto al mese con valore retail massimo di 1200€',type:'Platinum'}
+  ])
   const [isModalVisible1, setModalVisible1] = useState(false)
   const [isModalVisible, setModalVisible] = useState(false)
   const [color,setColor] = useState(false)
   const [brand,setBrand] = useState(false)
   const [taglia,setTaglia] = useState(false)
   const [isEnabled, setIsEnabled] = useState(false)
+  const [checked,setChecked] = useState(0)
 
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
@@ -84,54 +90,30 @@ const ProductsScreen: FunctionComponent<Props> = () => {
                 <S.ContentModal>
                     <S.ColBetween>
                         <Text style={{fontSize:27,fontWeight:'bold',color:'black'}}>Filtra per viore di abbonamento</Text>
-                    
-                        <S.RowAround>
-                            <S.FlexCol>
-                                <T.Header1>39€</T.Header1>
-                                <T.Text2>all mese</T.Text2>
-                            </S.FlexCol>
+                        {
+                            options.map((item,index)=>(
+                                <S.RowAround key={index}>
+                                    <S.FlexCol>
+                                        <T.Header1>{item.price}</T.Header1>
+                                        <T.Text2>all mese</T.Text2>
+                                    </S.FlexCol>
 
-                            <S.FlexCol style={{flex:1,marginHorizontal:35}}>
-                                <T.Header2>Sliver</T.Header2>
-                                <S.WrapText style={{}}>Con questo abbonamento hai accesso a un prodotto al mese con valore retail massimo di 250€</S.WrapText>
-                            </S.FlexCol>
+                                    <S.FlexCol style={{flex:1,marginHorizontal:35}}>
+                                        <T.Header2>{item.type}</T.Header2>
+                                        <S.WrapText style={{}}>{item.description}</S.WrapText>
+                                    </S.FlexCol>
 
-                            <S.FlexCol>
-                                <Image source={require('../../assets/images/radio.png')}/>
-                            </S.FlexCol>
-                        </S.RowAround>
-
-                        <S.RowAround>
-                            <S.FlexCol>
-                                <T.Header1>69€</T.Header1>
-                                <T.Text2>all mese</T.Text2>
-                            </S.FlexCol>
-
-                            <S.FlexCol style={{flex:1,marginHorizontal:35}}>
-                                <T.Header2>Sliver</T.Header2>
-                                <S.WrapText style={{}}>Con questo abbonamento hai accesso a un prodotto al mese con valore retail massimo di 250€</S.WrapText>
-                            </S.FlexCol>
-
-                            <S.FlexCol>
-                                <Image source={require('../../assets/images/radio-checked.png')}/>
-                            </S.FlexCol>
-                        </S.RowAround>
-
-                        <S.RowAround>
-                            <S.FlexCol>
-                                <T.Header1>99€</T.Header1>
-                                <T.Text2>all mese</T.Text2>
-                            </S.FlexCol>
-
-                            <S.FlexCol style={{flex:1,marginHorizontal:35}}>
-                                <T.Header2>Sliver</T.Header2>
-                                <S.WrapText style={{}}>Con questo abbonamento hai accesso a un prodotto al mese con valore retail massimo di 250€</S.WrapText>
-                            </S.FlexCol>
-
-                            <S.FlexCol>
-                                <Image source={require('../../assets/images/radio.png')}/>
-                            </S.FlexCol>
-                        </S.RowAround>
+                                    <S.FlexCol onPress={()=>{setChecked(index)}}>
+                                        {
+                                            checked == index ?
+                                            (<Image source={require('../../assets/images/radio-checked.png')}/>):
+                                            (<Image source={require('../../assets/images/radio.png')}/>)
+                                        }
+                                        
+                                    </S.FlexCol>
+                                </S.RowAround>
+                            ))
+                        }
 
                         <S.RowBetween>
                             <Button text="Annulla" onPress={toggleModal} type="third" />
