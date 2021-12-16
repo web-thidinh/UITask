@@ -10,7 +10,7 @@ export const Price = styled.View`
 
 export const Description = styled.View`
     flex:1;
-    margin:0 35px;
+    margin:0 ${({ theme }) => theme.spacing[4]}px;
 `
 export const RadioButton = styled.TouchableOpacity`
 `

@@ -64,9 +64,11 @@ export function getThemeConfig(mode: ThemeConfig) {
     spacing:{
       ...spacing,
     },
-    screenSize:{
+    screen_size:{
       ...screenSize
     },
-    
+    border_radius:{
+      ...borderRadius
+    }
   }
 }

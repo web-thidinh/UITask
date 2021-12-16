@@ -50,8 +50,3 @@ export const shadow = {
   medium: '0px 6px 24px',
   android_elevation: 4,
 }
-// export default {
-//   SCREEN_WIDTH: width,
-//   SCREEN_HEIGHT: height,
-//   SCREEN_PADDING: 16,
-// }
