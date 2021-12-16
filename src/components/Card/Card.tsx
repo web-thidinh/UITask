@@ -51,9 +51,9 @@ const Card: FunctionComponent<Props> = ({ type = 'Valore', outs = [], image, bra
         <Spacer h={4} />
         <S.CenteredGrid>
           <PlanningButton type={type} />
-          <T.CardTitle2 color={colors.DARK_LIVER} bold>
+          <T.Header2 color={colors.DARK_LIVER} bold>
             {price}
-          </T.CardTitle2>
+          </T.Header2>
         </S.CenteredGrid>
       </S.Content>
     </S.Container>

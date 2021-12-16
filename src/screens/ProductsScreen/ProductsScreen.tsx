@@ -4,33 +4,40 @@ import Card from '../../components/Card'
 import Button from '../../components/Buttons'
 import FiltraModal from '../../components/FiltraModal'
 import ProductModal from '../../components/ProductModal'
-import React, { FunctionComponent ,useState,useRef} from 'react'
-
+import React, { FunctionComponent ,useState,useRef,useEffect} from 'react'
+import {getProducts} from '../../Api/productApi'
+ 
 type Props = {}
 
 const ProductsScreen: FunctionComponent<Props> = () => {
-  const showProductModal = useRef(null)
-  const showFiltraModal = useRef(null)
-  const listBtn = ['ALL','TOP','BOTTON','HOODIE','T-SHIRT']
-  const products = [
-      {id:'1',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
-      {id:'2',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
-      {id:'3',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
-      {id:'4',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
-      {id:'5',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
-      {id:'6',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
-  ]
+    const showProductModal = useRef(null)
+    const showFiltraModal = useRef(null)
 
-  const openProductModal = ()=>{
-    showProductModal.current.open()
-  }
+    const [products,setProducts] = useState([])
+    const listBtn = ['ALL','TOP','BOTTON','HOODIE','T-SHIRT']
+    // const products = [
+    //     {id:'1',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
+    //     {id:'2',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
+    //     {id:'3',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
+    //     {id:'4',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
+    //     {id:'5',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
+    //     {id:'6',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
+    // ]
+    const openProductModal = ()=>{
+        showProductModal.current.open()
+    }
 
-  const openFiltraModal = ()=>{
-    showFiltraModal.current.open()
-  }
-
-  return(
-      <S.Container>
+    const openFiltraModal = ()=>{
+        showFiltraModal.current.open()
+    }
+    const a = async ()  =>{
+        const productsData = await getProducts()
+        setProducts(productsData.data)
+    }
+    a()
+    // console.log(products)
+    return(
+        <S.Container>
 
             <S.Header>
                 <S.HeaderLeft>
@@ -56,7 +63,7 @@ const ProductsScreen: FunctionComponent<Props> = () => {
                     data={products}
                     numColumns={2}
                     renderItem={({item})=>(
-                        <Card type='Valore' onPress={openProductModal} brand={item.brand} image = {item.image} price={item.price}/>
+                        <Card type='Valore' onPress={openProductModal} brand={item.attributes.name} image = {item.attributes.mainImage.data.attributes} price={item.attributes.subscriptionType.data.attributes.name}/>
                     )}
                 />
             </S.Content>
@@ -64,8 +71,8 @@ const ProductsScreen: FunctionComponent<Props> = () => {
             <ProductModal ref={showProductModal}/>
             <FiltraModal ref={showFiltraModal}/>
 
-      </S.Container>
-  )
+        </S.Container>
+    )
 }
 
 export default ProductsScreen

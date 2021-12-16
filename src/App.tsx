@@ -15,8 +15,8 @@ LogBox.ignoreLogs([
 ])
 
 const App: FC = () => {
-  const isDarkMode = useColorScheme() === 'dark'
 
+  const isDarkMode = useColorScheme() === 'dark'
   const theme = getThemeConfig(themes.light)
 
   return (
