@@ -1,15 +1,15 @@
 import { RequestAction } from '@redux-requests/core'
 
 export const FETCH_PRODUCTS = 'FETCH_PRODUCTS'
-const fetchProduct = (data)=>({
+
+const fetchProducts = ()=>({
     type:FETCH_PRODUCTS,
     request: {
-        url: '/user',
-        method: 'POST',
-        data,
+        url: '/products',
+        method: 'GET',
       },
 })
 
-export {
-    fetchProduct
+export const productAction = {
+    fetchProducts
 }
