@@ -6,6 +6,7 @@ import FiltraModal from '../../components/FiltraModal'
 import ProductModal from '../../components/ProductModal'
 import React, { FunctionComponent ,useState,useRef,useEffect} from 'react'
 import {getProducts} from '../../Api/productApi'
+import useProducts from '../../hooks/useProducts'
  
 type Props = {}
 
@@ -13,16 +14,11 @@ const ProductsScreen: FunctionComponent<Props> = () => {
     const showProductModal = useRef(null)
     const showFiltraModal = useRef(null)
 
-    const [products,setProducts] = useState([])
+    const products = useProducts()
+    // console.log(products)
+    
     const listBtn = ['ALL','TOP','BOTTON','HOODIE','T-SHIRT']
-    // const products = [
-    //     {id:'1',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
-    //     {id:'2',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
-    //     {id:'3',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
-    //     {id:'4',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
-    //     {id:'5',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
-    //     {id:'6',brand:'Brand name',image:require('../../assets/images/hoodie.jpg'),price:'SLIVER'},
-    // ]
+    
     const openProductModal = ()=>{
         showProductModal.current.open()
     }
@@ -30,12 +26,7 @@ const ProductsScreen: FunctionComponent<Props> = () => {
     const openFiltraModal = ()=>{
         showFiltraModal.current.open()
     }
-    const a = async ()  =>{
-        const productsData = await getProducts()
-        setProducts(productsData.data)
-    }
-    a()
-    // console.log(products)
+    
     return(
         <S.Container>
 
@@ -63,7 +54,7 @@ const ProductsScreen: FunctionComponent<Props> = () => {
                     data={products}
                     numColumns={2}
                     renderItem={({item})=>(
-                        <Card type='Valore' onPress={openProductModal} brand={item.attributes.name} image = {item.attributes.mainImage.data.attributes} price={item.attributes.subscriptionType.data.attributes.name}/>
+                        <Card type='Valore' onPress={openProductModal} brand={item.attributes.name} image = {item.attributes.mainImage.data.attributes.url} price={item.attributes.subscriptionType.data.attributes.name}/>
                     )}
                 />
             </S.Content>

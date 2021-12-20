@@ -3,10 +3,12 @@ import { handleRequests } from '@redux-requests/core'
 import { AxiosError } from 'axios'
 import axios from '../axios'
 import { FETCH_USER } from './modules/user'
-import { User } from './types'
+import {FETCH_PRODUCTS} from './modules/product'
+import { User,Products } from './types'
 
 export type RequestsStateQueries = {
-  [FETCH_USER]: RequestQuery<User>
+  [FETCH_USER]: RequestQuery<User>,
+  [FETCH_PRODUCTS]: RequestQuery<Products>
 }
 
 export type RequestQuery<T> = {
